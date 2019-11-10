@@ -35,11 +35,11 @@ srun python mem.py
 
 Here is the resulting error message:
 
-``
+```
 srun: error: tiger-i23g11: task 0: Out Of Memory
 srun: Terminating job step 3955284.0
 slurmstepd: error: Detected 1 oom-kill event(s) in step 3955284.0 cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
-``
+```
 
 ## GPU
 
