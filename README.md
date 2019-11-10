@@ -4,7 +4,7 @@ This page illustrates how to exceed the memory alloction and the resulting OOM e
 
 ## CPU
 
-```
+```python
 import numpy as np
 from time import sleep
 
@@ -17,7 +17,7 @@ sleep(10)
 
 Slurm script:
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=mem-exceed    # create a short name for your job
 #SBATCH --nodes=1                # node count
@@ -65,7 +65,7 @@ sleep(10)
 
 Slurm script:
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=mem-exceed    # create a short name for your job
 #SBATCH --nodes=1                # node count
