@@ -2,6 +2,11 @@
 
 This page illustrates how to exceed the memory alloction and the resulting OOM error message on both the CPU and GPU.
 
+```
+import numpy as np
+x = np.random.randn(200_000_000).astype(np.float64)
+```
+
 ## CPU
 
 ```python
