@@ -97,3 +97,36 @@ RuntimeError: CUDA out of memory. Tried to allocate 8.94 GiB (GPU 0; 15.90 GiB t
 srun: error: tiger-i23g11: task 0: Exited with exit code 1
 srun: Terminating job step 3955266.0
 ```
+
+
+## C++
+
+```c++
+// g++ -std=c++11 mem_test.cpp
+
+#include <iostream>
+#include <random>
+#include <unistd.h>
+
+int main(int argc, char* argv[]) {
+  std::cerr << sizeof(double) << " bytes per double" << std::endl;
+  long N = 1600000000;
+  double* chuck = new double[N]; // 8 Bytes x 4e8 = 3.2GB
+  double arr[N];
+  std::cerr << "Storing random numbers ..." << std::endl;
+  std::default_random_engine generator;
+  std::uniform_real_distribution<double> distribution(0.0, 1.0);
+  for (int i = 0; i < 0; i++)
+    chuck[i] = distribution(generator);
+  std::cerr << "Done generating random numbers." << std::endl;
+  std::cerr << sizeof(chuck) << std::endl;
+
+  std::cerr << "Sleeping for 10 seconds ..." << std::endl;
+  unsigned int microseconds = 10000000;
+  usleep(microseconds);
+  std::cerr << "Done sleeping." << std::endl;
+
+  delete[] chuck;
+  return 0;
+}
+```
