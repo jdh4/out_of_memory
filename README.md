@@ -13,7 +13,7 @@ x = np.random.randn(200_000_000).astype(np.float64)
 import numpy as np
 from time import sleep
 
-N = 500000000
+N = 500_000_000
 x = np.random.randn(N)
 sleep(10)
 y = np.random.randn(N)
@@ -60,7 +60,7 @@ Python script:
 import torch
 from time import sleep
 
-N = 1200000000
+N = 1_200_000_000
 
 x = torch.randn(N, dtype=torch.float64, device=torch.device('cuda:0'))
 sleep(10)
