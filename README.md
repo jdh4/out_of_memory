@@ -110,13 +110,13 @@ srun: Terminating job step 3955266.0
 
 int main(int argc, char* argv[]) {
   std::cerr << sizeof(double) << " bytes per double" << std::endl;
-  long N = 1600000000;
+  long N = 400000000;
   double* chuck = new double[N]; // 8 Bytes x 4e8 = 3.2GB
-  double arr[N];
+  //double arr[N];
   std::cerr << "Storing random numbers ..." << std::endl;
   std::default_random_engine generator;
   std::uniform_real_distribution<double> distribution(0.0, 1.0);
-  for (int i = 0; i < 0; i++)
+  for (int i = 0; i < N; i++)
     chuck[i] = distribution(generator);
   std::cerr << "Done generating random numbers." << std::endl;
   std::cerr << sizeof(chuck) << std::endl;
